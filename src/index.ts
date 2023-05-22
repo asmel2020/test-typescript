@@ -1,22 +1,16 @@
-'use strict';
+"use strict";
 
-import { Logger } from 'sitka';
+/* import * as Minio from "minio";
+import * as fs from "fs"; */
+import { LightsailClient, AllocateStaticIpCommand } from "@aws-sdk/client-lightsail";
+(async () => {
+const client = new LightsailClient({
+    region: "us-east-1",
+    credentials: {
+        accessKeyId: "accessKeyId",
+      secretAccessKey:"secretAccessKey"
+    },
+    
 
-export class Example {
-	/* Private Instance Fields */
-
-	private _logger: Logger;
-
-	/* Constructor */
-
-	constructor() {
-		this._logger = Logger.getLogger({ name: this.constructor.name });
-	}
-
-	/* Public Instance Methods */
-
-	public exampleMethod(param: string): string {
-		this._logger.debug('Received: ' + param);
-		return param;
-	}
-}
+   });
+})();
